@@ -4,6 +4,7 @@ import time
 from datetime import datetime, timedelta
 import pandas as pd
 from functions.make_conjectures import make_conjectures
+#from functions.heuristics import Dalmation
 
 
 
@@ -81,41 +82,11 @@ properties = [['is_bipartite'],
              ]
 
 graph_properties = {i : [x] for i, x in enumerate(properties)}
-graph_properties['all'] = properties
-
-
-'''
-valid_invariants = {1: 'domination_number',
-                    2: 'total_domination_number',
-                    3: 'connected_domination_number',
-                    4: 'independence_number',
-                    5: 'independent_domination_number',
-                    6: 'zero_forcing_number',
-                    7: 'power_domination_number',
-                    8: 'matching_number', 
-                    9: 'min_maximal_matching_number',
-                    10: 'chromatic_number',
-                    11: 'clique_number',
-                    12: 'triameter', 
-                    13: 'atom_bond_connectivity_index'}
+#graph_properties['all'] = properties
 
 
 
-graph_properties = {1 : 'is_connected',
-                    2 : 'is_regular',
-                    3 : 'is_cubic',
-                    4 : 'is_planar',
-                    5 : 'is_not_K_n',
-                    6 : 'is_triangle_free',
-                    7 : 'is_eulerian',
-                    8 : 'is_distance_regular',
-                    9 : 'is_strongly_regular',
-                    10: 'is_bipartite'
-                    }               
-'''
-
-
-data = pd.read_csv('data/small_graphs_new.csv')
+data = pd.read_csv('data/order_1_to_6_plus.csv')
 
 def main():
     print(figlet_format('Linear TxGRAFFITI', font='slant'))
@@ -126,7 +97,6 @@ def main():
     print('The invariants you may conjecture against are: ')
     print('-----------------------------------------------')
     print()
-    i = 1
 
 
     for x in valid_invariants:
@@ -137,10 +107,25 @@ def main():
     target = valid_invariants[int(input('Invariant: '))]
     print()
 
-
-
     conjectures = make_conjectures(data, [target], invariants, properties)
-    for i, c in enumerate(conjectures[:100]):
+
+    print(f'Please limit the number of conjectures presented')
+    print()
+    limit = int(input(f'Enter a integer between {0} and {len(conjectures)}: '))
+    print('-----------------------------------------------')
+    print()
+
+    #conjectures = Dalmation(conjectures)
+    print('')
+    print(figlet_format('Linear TxGRAFFITI', font='slant'))
+    print('Version ' + __version__)
+    print('Copyright ' + u'\u00a9' + ' 2019 Randy Davila')
+    print('')
+
+    print('The invariants you may conjecture against are: ')
+    print('-----------------------------------------------')
+    print('')
+    for i, c in enumerate(conjectures[:limit]):
         print(f'Conjecture {i+1}. {c} (touch = {c.touch})')
         print('')
        
