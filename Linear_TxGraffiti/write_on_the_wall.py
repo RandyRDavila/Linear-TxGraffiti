@@ -64,6 +64,10 @@ valid_invariants = {i : x for i, x in enumerate(invariants)}
 
 
 properties = [['is_bipartite'], 
+              ['is_tree'],
+              ['is_chordal'],
+              ['is_semieulerian'],
+              ['is_bull_free'],
               ['is_eulerian'], 
               ['is_planar'], 
               ['is_regular'],
@@ -109,6 +113,11 @@ def main():
 
     conjectures = make_conjectures(data, [target], invariants, properties)
 
+
+    print(figlet_format('Linear TxGRAFFITI', font='slant'))
+    print('Version ' + __version__)
+    print('Copyright ' + u'\u00a9' + ' 2019 Randy Davila')
+    print()
     print(f'Please limit the number of conjectures presented')
     print()
     limit = int(input(f'Enter a integer between {0} and {len(conjectures)}: '))
