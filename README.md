@@ -1,8 +1,10 @@
 # Linear_TxGraffiti
+*Automated conjecturing in graph theory using Python*
 
-An automated conjecturing program for simple connected graphs
+### What is it?
+Linear TxGraffiti is the latest version of TxGraffiti, an automated conjecturing program which produces conjectures on simple and connected graphs.
 
-## Basic usage
+### Basic usage
 
 Running the following from the command line will prompt the user to select a graph
 theory invariant to conjecture on:
@@ -11,7 +13,7 @@ theory invariant to conjecture on:
 python3 write_on_the_wall.py
 
 ```
-You will then see the following options displayed in the terminal. 
+You will then see the following options displayed in the terminal. Enter in the integer corresponding to the graph invariant you would like to TxGraffiti to conjecture on. 
 
 
 The invariants you may conjecture against are: 
@@ -114,3 +116,13 @@ The invariants you may conjecture against are:
 
 
 
+
+### Why does it exist?
+ * Motivate the study of previously unrelated graph theory invariants.
+ * To assist mathematicians in producing novel research. 
+
+### License
+Released under the 3-Clause BSD license (see `LICENSE.txt`):
+
+    Copyright (C) 2021 Linear TxGraffiti Developers
+    Randy Davila <davilar@uhd.edu>
