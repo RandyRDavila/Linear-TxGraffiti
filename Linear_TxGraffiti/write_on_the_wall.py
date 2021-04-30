@@ -116,7 +116,7 @@ def main():
 
     print(figlet_format('Linear TxGRAFFITI', font='slant'))
     print('Version ' + __version__)
-    print('Copyright ' + u'\u00a9' + ' 2019 Randy Davila')
+    print('Copyright ' + u'\u00a9' + ' 2021 Randy Davila')
     print()
     print(f'Please limit the number of conjectures presented')
     print()
@@ -128,10 +128,10 @@ def main():
     print('')
     print(figlet_format('Linear TxGRAFFITI', font='slant'))
     print('Version ' + __version__)
-    print('Copyright ' + u'\u00a9' + ' 2019 Randy Davila')
+    print('Copyright ' + u'\u00a9' + ' 2021 Randy Davila')
     print('')
 
-    print('The invariants you may conjecture against are: ')
+    print(f'TxGraffiti Conjectures: {target} ')
     print('-----------------------------------------------')
     print('')
     for i, c in enumerate(conjectures[:limit]):
